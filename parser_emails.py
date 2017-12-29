@@ -52,7 +52,6 @@ def add_all_mails_recursive(url, maxdepth=DEFAULT_DEPTH):
     E-mail search function
     """
 
-    mails = []
     links_to_handle_recursive = []
 
     # Converts an address to a standard view.
