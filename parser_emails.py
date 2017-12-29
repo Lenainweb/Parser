@@ -16,6 +16,10 @@ DEFAULT_DEPTH = 0
 FORBIDDEN_PREFIXES = ['#', 'tel:']
 ADJUSTABLE_PREFIXES = ['http', '//', ' ']
 
+# Lists of all links and emails
+ctrl = []
+mails =[]
+
 def main():
     """
     Checks the values specified at startup on the command line.
@@ -77,12 +81,13 @@ def add_all_mails_recursive(url, maxdepth=DEFAULT_DEPTH):
                     if all (not link.startswith(a_prefix) for a_prefix in ADJUSTABLE_PREFIXES):
                         link = domain + link
 
-                    if  link.find(domain) != -1  and link not in links_to_handle_recursive:
+                    if  link.find(domain) != -1  and link not in links_to_handle_recursive and link not in ctrl:
                         links_to_handle_recursive.append(link)
+                        ctrl.append(link)
             except:
                 continue
             # Using the regular expression, we find emails.
-            mail = r"[a-zA-Z0-9]{1,100}@[a-z]{1,10}\.[a-z]{2,4}"
+            mail = r"[-a-zA-Z0-9_]{1,100}@[a-z]{1,10}\.[a-z]{2,4}"
             foundaddresses = re.findall(mail, request.text)
             for address in foundaddresses:
                 if address and address not in mails:
