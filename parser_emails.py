@@ -86,7 +86,7 @@ def add_all_mails_recursive(url, maxdepth=DEFAULT_DEPTH):
             except:
                 continue
             # Using the regular expression, we find emails.
-            mail = r"[-a-zA-Z0-9_]{1,100}@[a-z]{1,10}\.[a-z]{2,4}"
+            mail = r"[-a-zA-Z0-9._]{1,100}@[a-z]{1,10}\.[a-z]{2,4}"
             foundaddresses = re.findall(mail, request.text)
             for address in foundaddresses:
                 if address and address not in mails:
