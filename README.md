@@ -1,11 +1,21 @@
-Сценарий для парсинга emails по заданному Url.
+#A script for parsing emails for a given URL with a given depth.
+![python3.x](https://img.shields.io/badge/python-3.x-brightgreen.svg) 
 
-Для запуска:
-  Клонировать файл: $ git clone https://github.com/Lenainweb/Parser.git
-  
-  Набрать в командной строке: 
-    chmod a+x parser_emails.py
-  
-  Запустить программу:
-    ./parser_emails.py url_address [depth]
-  
+## Dependencies
+* BeautifulSoup
+
+## Setting up
+
+##### Clone the repo
+
+```
+$ git clone https://github.com/Lenainweb/Parser.git
+$ cd Parser
+```
+
+## Running the application
+
+```
+$ chmod a+x parser_emails.py
+$ ./parser_emails.py url_address [depth]
+```
