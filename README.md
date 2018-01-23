@@ -1,4 +1,4 @@
-#A script for parsing emails for a given URL with a given depth.
+# Script for parsing emails for a given URL with a given depth.
 ![python3.x](https://img.shields.io/badge/python-3.x-brightgreen.svg) 
 
 ## Dependencies
